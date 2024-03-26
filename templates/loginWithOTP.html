@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="login-heading">Login Page</h2>
+        <form id="otpForm">
+            <label for="mobileNumber">Enter mobile number</label>
+            <input type="text" id="mobileNumber" name="mobileNumber" placeholder="Mobile Number" required autocomplete="off">
+            <button type="button" onclick="sendOtp()" class="form-button">Send OTP</button>
+        </form>
+
+        <div id="otpDisplay">
+            <p>The OTP is: <span id="otpSent"></span></p>
+        </div>
+
+        <div id="otpVerification">
+            <form id="verifyForm">
+                <label for="otp">Enter OTP</label>
+                <input type="text" id="otp" name="otp" placeholder="OTP" required>
+                <button type="button" onclick="verifyOtp()" class="form-button">Verify OTP</button>
+            </form>
+        </div>
+
+        <div id="errorDisplay">
+            <p id="errorMessage"></p>
+        </div>
+    </div>
+
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+</html>
